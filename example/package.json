@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "mongoose": "~3.8.4",
+    "dustjs-linkedin": "~2.2.2",
+    "express": "~3.4.7",
+    "consolidate": "~0.10.0",
+    "dustjs-helpers": "~1.1.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

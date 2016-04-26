@@ -1,0 +1,42 @@
+{?.top_level}
+{/.top_level}
+{#fields}
+	{?.fields}
+		<fieldset class="{class}">
+			<legend>{legend}</legend>
+			{>"form"/}
+		</fieldset>
+	{:else}
+		<div class="field">
+			{?.label}<label for="{name}" {?.required}required{/.required}>{label}</label>{/.label}
+			{@eq key="select" value=type}
+				<select {#.attributes}{.key}{?.value}="{value}"{/.value}{/.attributes}>
+					{^.required}
+						{^.multiple}
+							<option></option>
+						{/.multiple}
+					{/.required}
+					{?.ref}
+						{#refs[name] input_name=name}
+							<option value="{_id}" {@if cond="'{entity[input_name]}'.indexOf('{_id}')!=-1"}selected{/if}>{.[display]}</option>
+						{/refs[name]}
+					{/.ref}
+					{#.options input_name=name}
+						<option value={.} {@if cond="'{entity[input_name]}'.indexOf('{.}')!=-1"}selected{/if}>{.}</option>
+					{/.options}
+				</select>
+			{/eq}
+			{@eq key="textarea" value=type}
+				<textarea {#.attributes}{.key}{?.value}="{value}"{/.value}{/.attributes}>{entity[name]}</textarea>
+			{/eq}
+			{@eq key="input" value=type}
+				<input type="{input}" {#.attributes}{.key}{?.value}="{value}"{/.value}{/.attributes} {?entity[name]}value="{entity[name]}"{/entity[name]} />
+				{?.image}
+				<output data-input="{name}">
+					<img src="{entity[name]}" />
+				</output>
+				{/.image}
+			{/eq}
+		</div>
+	{/.fields}
+{/fields}

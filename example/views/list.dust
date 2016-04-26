@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>People List</title>
+</head>
+<body>
+	<a href="/manage">Add New Person</a>
+	{#people}
+		<div><a href="/manage/{_id}">{name.last}, {name.first}</a></div>
+	{/people}
+</body>
+</html>
+

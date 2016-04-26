@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mongoose": "~3.8.4",
+    "dustjs-helpers": "~1.1.1",
+    "dustjs-linkedin": "~2.2.2"
+  },
+  "devDependencies": {
+    "should": "~2.1.1",
+    "mocha": "~1.17.0",
+    "sinon": "~1.7.3",
+    "proxyquire": "~0.5.2"
+  },
+  "scripts": {
+    "start": "node example/index.js"
+  }
+}

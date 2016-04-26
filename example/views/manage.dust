@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{person.name.last}, {person.name.first} | Edit</title>
+</head>
+<body>
+	<a href="/">Back to the List</a>
+	<form action="/manage/{person._id}" method="post" enctype="multipart/form-data">
+		{fields|s}
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>
+
